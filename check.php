@@ -33,9 +33,21 @@ if ($nickname == '') {
     </head>
     <body>
         <h1>入力内容確認</h1>
-        <p><?php echo $nickname ?></p>
-        <p><?php echo $email ?></p>
-        <p><?php echo $content ?></p>
+        <p><?php echo $nickname_result ?></p>
+        <p><?php echo $email_result ?></p>
+        <p><?php echo $content_result ?></p>
+
+        <form method="POST" action="thanks.php">
+            <input type="hidden" name="nickname" value="<?php echo $nickname?>">
+            <input type="hidden" name="email" value="<?php echo $email?>">
+            <input type="hidden" name="content" value="<?php echo $content?>">
+
+            <input type="button" value="戻る" onclick="history.back()">
+            <?php if ($email !='' && $nickname != '' && $content!=''):
+            ///コロン構文    ?>
+            <input type="submit" value="OK">
+           <?php endif;?> 
+        </form>
     </body>
 
 </html>
