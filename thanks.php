@@ -10,6 +10,12 @@ require_once('function.php');
 $nickname=h($_POST['nickname']);
 $email=h($_POST['email']);
 $content=h($_POST['content']);
+
+//DBとの接続
+require_once('dbconnect.php');
+$stmt = $dbh->prepare('INSERT INTO surveys (nickname,email,content) VALUES(?,?,?)');
+$stmt->execute([$nickname,$email,$content]);
+
 ?>
 
 <!DOCTYPE html>
