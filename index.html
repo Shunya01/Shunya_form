@@ -3,24 +3,33 @@
 <head>
     <meta charset="utf-8">
     <title>お問い合わせ</title>
+    <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
-    <h1>お問い合わせ情報入力</h1>
+
+    <div class="container">
+
+    <div class="row">
+    <h1 class="jumbotron text-center bg-info col-12">お問い合わせ情報を入力してください</h1>
+    </div>
+
     <form method="POST" action="check.php">
-        <div>
+        <div class="ml-5">
             ニックネーム<br>
-            <input type="text" name="nickname">
+            <input type="text" name="nickname" placeholder="例）山田太郎">
         </div>
-        <div>
+        <div class="ml-5 mt-3">
             メールアドレス<br>
-            <input type="text" name="email">
+            <input type="text" name="email" size="40" placeholder="例）taro@email.com">
         </div>
-        <div>
+        <div class="ml-5 mt-3">
             お問い合わせ<br>
-            <textarea name="content"></textarea>
+            <textarea name="content" rows="4" cols="60" placeholder="例）プログラミング上達法について悩んでいます。何かアドバイスをお願いします。"></textarea>
         </div>
-        <input type="submit" name="送信">
+        <input type="submit" name="送信" class="btn-primary btn-lg ml-5 mt-3">
     </form>
+    </div>
+
 
 </body>
 
