@@ -4,6 +4,7 @@
 require_once ('function.php');
 require_once ('dbconnect.php');
 
+
 $searchWord = '';
 if (isset($_GET['searchWord'])) {
     $searchWord = $_GET['searchWord'];
@@ -14,8 +15,9 @@ $stmt->execute(["%$searchWord%"]);
 $results = $stmt->fetchAll();
 ?>
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <title>検索システム</title>
@@ -40,6 +42,13 @@ $results = $stmt->fetchAll();
         <p><?php echo $result['nickname']?></p>
         <p><?php echo $result['email']?></p>
         <p><?php echo $result['content']?></p>
+        <form action="delete.php" method="POST">
+            <input type="submit" value="削除">
+            <input type="hidden" name="id" value="<?php echo $result['id']?>">
+            <input type="hidden" name="nickname" value="<?php echo $result['nickname']?>">
+            <input type="hidden" name="email" value="<?php echo $result['email']?>">
+            <input type="hidden" name="content" value="<?php echo $result['content']?>">
+        </form>
         <hr style="border:0;border-top:1px solid blue;">
     <?php endforeach; ?>
 
