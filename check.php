@@ -17,7 +17,7 @@ $content=h($_POST['content']);
 if ($nickname == '') {
     $nickname_result = 'ニックネームが入力されてません。';
 } else {
-    $nickname_result = 'ニックネーム: ' . $nickname . ' 様';
+    $nickname_result = 'ニックネーム: ' . $nickname;
 }
 
 if ($email == '') {
