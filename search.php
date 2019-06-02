@@ -40,7 +40,6 @@ $results = $stmt->fetchAll();
         <p><?php echo $result['nickname']?></p>
         <p><?php echo $result['email']?></p>
         <p><?php echo $result['content']?></p>
-        <input type="submit" value="削除" class="btn-success" onclick="js_alert()">
         <hr style="border:0;border-top:1px solid blue;">
     <?php endforeach; ?>
 
